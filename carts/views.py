@@ -35,7 +35,7 @@ def add_cart(request, product_id):
     is_cart_item_exists = CartItem.objects.filter(product=product, cart=cart).exists()
               
     if is_cart_item_exists:
-        cart_item = CartItem.objects.filter(product=product, cart=cart).order_by('-id')
+        cart_item = CartItem.objects.filter(product=product, cart=cart)
 
         #existing_variation -> database
         #current variation -> product_variation
@@ -69,7 +69,7 @@ def add_cart(request, product_id):
             product=product,
             quantity=1,
             cart=cart
-            ).order_by('-id')
+            )
         if len(product_variation) > 0:
             cart_item.variations.clear()
             cart_item.variations.add(*product_variation)
