@@ -50,7 +50,10 @@ class Account(AbstractBaseUser):
     email           = models.EmailField(max_length=100, unique=True)
     phone_number    = models.CharField(max_length=50)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
     # required
     date_joined     = models.DateTimeField(auto_now_add=True)
     last_login      = models.DateTimeField(auto_now_add=True)
@@ -74,6 +77,7 @@ class Account(AbstractBaseUser):
         return True
     
     def full_name(self):
+<<<<<<< HEAD
         return f'{self.first_name} {self.last_name}'
     
 class UserProfile(models.Model):
@@ -92,3 +96,6 @@ class UserProfile(models.Model):
         return f'{self.address_line_1} {self.address_line_2}'
 
 
+=======
+        return f'{self.first_name} {self.last_name}'
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867

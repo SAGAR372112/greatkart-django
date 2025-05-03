@@ -1,5 +1,9 @@
 from django import forms
+<<<<<<< HEAD
 from .models import Account, UserProfile
+=======
+from .models import Account
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 
 class RegistrationForm(forms.ModelForm):
 
@@ -35,6 +39,7 @@ class RegistrationForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Password does not match!"
             )
+<<<<<<< HEAD
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -56,3 +61,5 @@ class UserProfileForm(forms.ModelForm):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867

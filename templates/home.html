@@ -24,6 +24,10 @@
 	<a href="{% url 'store' %}" class="btn btn-outline-primary float-right">See all</a>
 	<h3 class="section-title">Popular products</h3>
 </header><!-- sect-heading -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 	
 <div class="row">
 	{% for product in products %}
@@ -33,6 +37,7 @@
 			<figcaption class="info-wrap">
 				<a href="{{ product.get_url }}" class="title">{{product.product_name}}</a>
 				<div class="price mt-1">${{product.price}}</div> <!-- price-wrap.// -->
+<<<<<<< HEAD
 				<div class="rating-star">
 					<span>
 						<i class="fa fa-star{% if product.average_rating < 0.5 %}-o{% elif product.average_rating >= 0.5 and product.average_rating < 1 %}-half-o{% endif %} aria-hidden="true"></i>
@@ -42,6 +47,8 @@
 						<i class="fa fa-star{% if product.average_rating < 4.5 %}-o{% elif product.average_rating >= 4.5 and product.average_rating < 5 %}-half-o{% endif %} aria-hidden="true"></i>
 					</span> 
 				</div>
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 			</figcaption>
 		</div>
 	</div> <!-- col.// -->
@@ -51,6 +58,14 @@
 </div><!-- container // -->
 </section>
 <!-- ========================= SECTION  END// ========================= -->
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 </body>
 </html>
 

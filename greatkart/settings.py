@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from decouple import config
+=======
+
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -9,10 +13,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # cast=bool is used to convert the string to boolean
+=======
+SECRET_KEY = 'django-insecure-^^z@r9-+1-y1loj&mi306#2#_po==#g7-a%=7=2#&4=k4f8v+4'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 
 ALLOWED_HOSTS = []
 
@@ -31,7 +42,10 @@ INSTALLED_APPS = [
     'store',
     'carts',
     'orders',
+<<<<<<< HEAD
     
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 ]
 
 MIDDLEWARE = [
@@ -42,12 +56,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+<<<<<<< HEAD
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 ]
 
 ROOT_URLCONF = 'greatkart.urls'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -65,12 +85,15 @@ TEMPLATES = [
     },
 ]
 
+<<<<<<< HEAD
 SESSION_EXPIRE_SECONDS = 3600 # 1 hour
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 SESSION_TIMEOUT_REDIRECT = 'accounts/login'
 
 
 
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 WSGI_APPLICATION = 'greatkart.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
@@ -81,12 +104,21 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': config('DB_ENGINE'),
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT'),
+=======
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'greatkart',
+        'USER': 'postgres',
+        'PASSWORD': 'Nanera@372',
+        'HOST': 'localhost',
+        'PORT': '5432',
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
     }
 }
 
@@ -121,6 +153,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+<<<<<<< HEAD
+=======
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.2/howto/static-files/
+
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
@@ -144,6 +187,7 @@ MESSAGE_TAGS = {
 }
 
 # SMTP configuration
+<<<<<<< HEAD
 EMAIL_HOST = config('EMAIL_HOST')   
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
@@ -160,3 +204,11 @@ SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
+=======
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sagarnanera372@gmail.com'
+EMAIL_HOST_PASSWORD = 'ubep bvxq mqgg efyd'
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867

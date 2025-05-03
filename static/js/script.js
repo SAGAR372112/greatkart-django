@@ -58,6 +58,9 @@ $(document).ready(function() {
 }); 
 // jquery end
 
+<<<<<<< HEAD
 // setTimeout(function() {
 //     $('#message').fadeOut('slow');
 // }, 4000)
+=======
+>>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
