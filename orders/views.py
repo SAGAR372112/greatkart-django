@@ -165,24 +165,6 @@ def order_complete(request):
             'order_number': order.order_number,
             'payment': payment,
             'subtotal': subtotal,
-            
-            # 'total': order.order_total,
-            # 'tax': order.tax,
-            # 'grand_total': order.order_total + order.tax,
-            # 'status': order.status,
-            # 'country': order.country,
-            # 'state': order.state,
-            # 'city': order.city,
-            # 'pincode': order.pincode,
-            # 'address_line_1': order.address_line_1,
-            # 'address_line_2': order.address_line_2,
-            # 'phone': order.phone,
-            # 'email': order.email,
-            # 'first_name': order.first_name,
-            # 'last_name': order.last_name,
-            # 'order_note': order.order_note,
-            # 'order_date': order.created_at,
-            # 'payment': payment
         }
         return render(request, 'orders/order_complete.html', context)
     

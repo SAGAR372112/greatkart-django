@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 
 from orders.models import Order, OrderProduct
 from .forms import RegistrationForm, UserForm, UserProfileForm
 from .models import Account, UserProfile
-=======
-from django.shortcuts import render, redirect
-from .forms import RegistrationForm
-from .models import Account
->>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
@@ -160,7 +154,6 @@ def activate(request, uidb64, token):
 
 @login_required(login_url='login')
 def dashboard(request):
-<<<<<<< HEAD
     orders = Order.objects.order_by('-created_at').filter(user_id=request.user.id, is_ordered=True)
     orders_count = orders.count()
 
@@ -170,9 +163,6 @@ def dashboard(request):
         'userprofile': userprofile,
     }
     return render(request, 'accounts/dashboard.html', context)
-=======
-    return render(request, 'accounts/dashboard.html')
->>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
 
 def forgot_password(request):
     if request.method == 'POST':
@@ -231,7 +221,6 @@ def reset_password(request):
            return redirect('reset_password')
    else:
        return render(request, 'accounts/reset_password.html')  
-<<<<<<< HEAD
 
 @login_required(login_url='login')
 def my_orders(request):
@@ -305,5 +294,3 @@ def order_detail(request, order_id):
         'total': total,
     }
     return render(request, 'accounts/order_detail.html', context)
-=======
->>>>>>> 6279ca3506e3df2c5e607c86e0ec763a2aeae867
