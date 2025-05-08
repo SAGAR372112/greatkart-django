@@ -1,4 +1,5 @@
 from decouple import config
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -6,8 +7,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG', default=True, cast=bool) # cast=bool is used to convert the string to boolean
 DEBUG = config('DEBUG', default=True, cast=bool) # cast=bool is used to convert the string to boolean
 
 ALLOWED_HOSTS = []
@@ -28,6 +31,8 @@ INSTALLED_APPS = [
     'carts',
     'orders',
     
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -38,10 +43,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
 
 ROOT_URLCONF = 'superkart.urls'
+
 
 TEMPLATES = [
     {
@@ -66,6 +73,12 @@ SESSION_TIMEOUT_REDIRECT = 'accounts/login'
 
 
 
+SESSION_EXPIRE_SECONDS = 3600 # 1 hour
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+SESSION_TIMEOUT_REDIRECT = 'accounts/login'
+
+
+
 WSGI_APPLICATION = 'superkart.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
@@ -76,6 +89,12 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 DATABASES = {
     'default': {
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
         'ENGINE': config('DB_ENGINE'),
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
