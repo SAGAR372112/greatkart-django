@@ -70,6 +70,12 @@
                             </div>
                         </div>
                         {% else %}
+                        {% if user.userprofile.profile_picture %}
+                        <div>
+                            <img src="{{user.userprofile.profile_picture.url}}" alt="User Profile Picture" width="50" height="50" style="border-radius: 50%;">
+                        </div>
+                        {% endif %}
+                        <hr>
                         <div class="widget-header">
                             <small class="title text-muted">Welcome {{ user.first_name }} !</small>
                             <div> 
