@@ -16,7 +16,7 @@ def _cart_id(request):
 
 # for adding the cart item
 def add_cart(request, product_id):
-
+   
     current_user = request.user
 
     # for getting the product
@@ -172,14 +172,17 @@ def remove_cart(request, product_id, cart_item_id):
 
 # for removing the cart all quantity item if quantity is more then one
 def remove_cart_item(request, product_id, cart_item_id):
-    cart = Cart.objects.get(cart_id=_cart_id(request))
-    product = get_object_or_404(Product, id=product_id)
-    if request.user.is_authenticated:
-        cart_item = CartItem.objects.get(product=product, user=request.user, id=cart_item_id)
-    else:
-        cart_item = CartItem.objects.get(product=product, cart=cart, id=cart_item_id)
-    cart_item.delete()
-    return redirect('cart')
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        product = get_object_or_404(Product, id=product_id)
+        if request.user.is_authenticated:
+            cart_item = CartItem.objects.get(product=product, user=request.user, id=cart_item_id)
+        else:
+            cart_item = CartItem.objects.get(product=product, cart=cart, id=cart_item_id)
+        cart_item.delete()
+        return redirect('cart')
+    except Exception as e:
+        return redirect('home')
 
 # for displaying the cart items
 def cart(request, total=0, quantity=0, cart_items=None):

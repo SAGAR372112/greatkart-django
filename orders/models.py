@@ -50,7 +50,7 @@ class Order(models.Model):
         return f"{self.address_line_1} {self.address_line_2}".capitalize()
     
     def __str__(self):
-        return self.user.first_name 
+        return self.first_name 
     
     
 class OrderProduct(models.Model):
