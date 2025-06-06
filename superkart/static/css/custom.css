@@ -61,3 +61,14 @@ ul.thumb li img{
     height: 80px;
     border: 1px solid grey;
 }
+
+ul.thumb li{
+    list-style: none;
+    margin: 10px;
+}
+
+ul.thumb li{
+    list-style: none;
+    margin: 10px;
+}
+
