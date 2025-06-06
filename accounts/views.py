@@ -162,15 +162,6 @@ def activate(request, uidb64, token):
 
 @login_required(login_url='login')
 def dashboard(request):
-    orders = Order.objects.order_by('-created_at').filter(user_id=request.user.id, is_ordered=True)
-    orders_count = orders.count()
-
-    userprofile = UserProfile.objects.get(user_id=request.user.id)
-    context = {
-        'orders_count': orders_count,
-        'userprofile': userprofile,
-    }
-    return render(request, 'accounts/dashboard.html', context)
     try:
         orders = Order.objects.order_by('-created_at').filter(user_id=request.user.id, is_ordered=True)
         orders_count = orders.count()
@@ -210,6 +201,7 @@ def forgot_password(request):
                 return redirect('forgot_password')
         except Exception as e:
             return render(request, 'accounts/forgot_password.html')
+    return render(request, 'accounts/forgot_password.html')
 
 def reset_password_validate(request, uidb64, token):
 

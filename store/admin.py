@@ -21,4 +21,3 @@ admin.site.register(Product, ProductAdmin)
 admin.site.register(Variation, variationAdmin)
 admin.site.register(ReviewRating)
 
-
